@@ -66,6 +66,7 @@ export type ScrollableNavigationBarProps = {
   containerRef?: Function,
   stayCollapsed?: boolean,
   SnapComponent?: React.ComponentType<any>,
+  NavigationBarWrapper?: React.ComponentType<any>,
   HeaderBackgroundComponent?: React.ComponentType<any>,
   parallax?: number,
   fadeOut?: boolean,
@@ -135,6 +136,7 @@ class ScrollableNavigationBar extends React.Component<ScrollableNavigationBarPro
   renderNavigationBar({
     title,
     titleStyle,
+    NavigationBarWrapper,
     headerBackgroundColor,
     borderColor,
     BackButton,
@@ -148,6 +150,7 @@ class ScrollableNavigationBar extends React.Component<ScrollableNavigationBarPro
       <NavigationBar
         title={title}
         titleStyle={titleStyle}
+        WrapperComponent={NavigationBarWrapper}
         backgroundColor={headerBackgroundColor}
         borderColor={
           transitionPoint !==
@@ -180,6 +183,7 @@ class ScrollableNavigationBar extends React.Component<ScrollableNavigationBarPro
       stayCollapsed,
       snapHeight,
       SnapComponent,
+      NavigationBarWrapper,
       HeaderBackgroundComponent,
       parallax,
       iconStyle,

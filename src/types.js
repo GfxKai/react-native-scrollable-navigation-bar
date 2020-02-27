@@ -62,6 +62,7 @@ export type NavigationBarIconProps = {
 
 export type NavigationBarDefaultProps = {|
   navigationBarHeight: number,
+  WrapperComponent: React.ComponentType<{}>,
   BackButton: ?React.ComponentType<any>,
   leftIcons: ?(React.Element<React.ComponentType<NavigationBarIconProps>>[]),
   rightIcons: ?(React.Element<React.ComponentType<NavigationBarIconProps>>[])

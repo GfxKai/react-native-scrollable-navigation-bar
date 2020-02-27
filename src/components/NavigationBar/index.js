@@ -11,6 +11,7 @@ import type {
 class NavigationBar extends React.Component<NavigationBarProps> {
   static defaultProps: NavigationBarDefaultProps = {
     navigationBarHeight: NAVIGATION_BAR_HEIGHT,
+    WrapperComponent: Animated.View,
     leftIcons: null,
     rightIcons: null,
     BackButton: () => null
@@ -20,6 +21,7 @@ class NavigationBar extends React.Component<NavigationBarProps> {
     const {
       title,
       titleStyle,
+      WrapperComponent,
       backgroundColor,
       style,
       BackButton,
@@ -28,8 +30,11 @@ class NavigationBar extends React.Component<NavigationBarProps> {
       navigationBarHeight,
       borderColor
     } = this.props;
+
+    const Wrapper = WrapperComponent || Animated.View;
+
     return (
-      <Animated.View
+      <Wrapper
         style={[
           {
             backgroundColor,
@@ -69,7 +74,7 @@ class NavigationBar extends React.Component<NavigationBarProps> {
             {title}
           </NavigationBarTitle>
         </View>
-      </Animated.View>
+      </Wrapper>
     );
   }
 }

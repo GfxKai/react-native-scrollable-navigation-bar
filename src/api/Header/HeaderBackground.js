@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Animated, View } from 'react-native';
-import { scaleable, disappear } from '../hoc';
+import { disappear } from '../hoc';
 import { ContextConsumer } from '../Context';
 import { NAVIGATION_BAR_HEIGHT } from '../../constants';
 import type {
@@ -42,17 +42,14 @@ class HeaderBackground extends React.Component<HeaderBackgroundProps> {
           }}
         >
           {disappear(
-            scaleable(
-              <Animated.View
-                style={{
-                  height: headerHeight,
-                  backgroundColor
-                }}
-              >
-                {children}
-              </Animated.View>,
-              animatedValue
-            ),
+            <Animated.View
+              style={{
+                height: headerHeight,
+                backgroundColor
+              }}
+            >
+              {children}
+            </Animated.View>,
             animatedValue,
             0,
             headerHeight - (navigationBarHeight + 30),
