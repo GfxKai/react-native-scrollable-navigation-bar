@@ -223,7 +223,7 @@ class ScrollableNavigationBar extends React.Component<ScrollableNavigationBarPro
                   this.renderNavigationBar({
                     ...this.props,
                     reachedTransitionPoint: false,
-                    title: undefined,
+                    title: headerTitle ? undefined : title,
                     borderColor: undefined,
                     leftIcons: bigLeftIcons || leftIcons,
                     rightIcons: bigRightIcons || rightIcons,

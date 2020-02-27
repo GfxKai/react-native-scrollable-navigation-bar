@@ -1,6 +1,6 @@
 {
-  "name": "react-native-scrollable-navigation-bar",
-  "version": "1.0.3",
+  "name": "@gfxkai/react-native-scrollable-navigation-bar",
+  "version": "1.1.1",
   "description": "Scrollable Navigation Bar for React Native",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:zobeirhamid/react-native-scrollable-navigation-bar.git"
+    "url": "git@github.com:gfxkai/react-native-scrollable-navigation-bar.git"
   },
   "peerDependencies": {
     "react": "*",
@@ -36,10 +36,10 @@
     "bar",
     "component"
   ],
-  "author": "Zobeir Hamid",
+  "author": "Julian Regan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zobeirhamid/react-native-scrollable-navigation-bar/issues"
+    "url": "https://github.com/gfxkai/react-native-scrollable-navigation-bar/issues"
   },
-  "homepage": "https://github.com/zobeirhamid/react-native-scrollable-navgation-bar"
+  "homepage": "https://github.com/gfxkai/react-native-scrollable-navigation-bar"
 }
