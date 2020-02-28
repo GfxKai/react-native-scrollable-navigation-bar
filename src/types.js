@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Animated } from 'react-native';
-import { type IconProps } from 'react-native-vector-icons';
+import { type IconProps } from '@expo/vector-icons';
 
 export type StatusBarComponentProps = {
   backgroundColor?: string

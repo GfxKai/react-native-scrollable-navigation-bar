@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Animated, View, TouchableOpacity } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import type { NavigationBarIconProps } from '../../types';
 
 class NavigationBarIcon extends React.Component<NavigationBarIconProps> {
