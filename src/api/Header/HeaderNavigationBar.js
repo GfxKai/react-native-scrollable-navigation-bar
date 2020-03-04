@@ -61,7 +61,8 @@ class HeaderNavigationBar extends React.Component<
           left: 0,
           right: 0,
           bottom: 0,
-          zIndex: 10
+          zIndex: 10,
+          elevation: 1000,
         }}
       >
         <NavigationBarContainer
