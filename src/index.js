@@ -223,30 +223,28 @@ class ScrollableNavigationBar extends React.Component<ScrollableNavigationBarPro
           ForegroundComponent={HeaderForegroundComponent}
           UnscrolledNavigationBar={
             HeaderUnscrolledComponent !== undefined
-              ? HeaderUnscrolledComponent
-              : () =>
-                  this.renderNavigationBar({
-                    ...this.props,
-                    reachedTransitionPoint: false,
-                    title: headerTitle ? undefined : title,
-                    borderColor: undefined,
-                    leftIcons: bigLeftIcons || leftIcons,
-                    rightIcons: bigRightIcons || rightIcons,
-                    iconStyle: bigIconStyle || iconStyle || imageStyle,
-                    headerBackgroundColor:
-                      HeaderBackgroundComponent !== undefined
-                        ? 'transparent'
-                        : this.props.headerBackgroundColor
-                  })
+              ? <HeaderUnscrolledComponent />
+              : this.renderNavigationBar({
+                  ...this.props,
+                  reachedTransitionPoint: false,
+                  title: headerTitle ? undefined : title,
+                  borderColor: undefined,
+                  leftIcons: bigLeftIcons || leftIcons,
+                  rightIcons: bigRightIcons || rightIcons,
+                  iconStyle: bigIconStyle || iconStyle || imageStyle,
+                  headerBackgroundColor:
+                    HeaderBackgroundComponent !== undefined
+                      ? 'transparent'
+                      : this.props.headerBackgroundColor
+                })
           }
           ScrolledNavigationBar={
             HeaderScrolledComponent !== undefined
-              ? HeaderScrolledComponent
-              : () =>
-                  this.renderNavigationBar({
-                    ...this.props,
-                    reachedTransitionPoint: true
-                  })
+              ? <HeaderScrolledComponent />
+              : this.renderNavigationBar({
+                  ...this.props,
+                  reachedTransitionPoint: true
+                })
           }
         />
         <Snap snapHeight={snapHeight}>

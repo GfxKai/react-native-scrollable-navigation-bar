@@ -71,7 +71,7 @@ class HeaderNavigationBar extends React.Component<
           collapsible={collapsible}
           stayCollapsed={stayCollapsed}
         >
-          <UnscrolledNavigationBar />
+          {UnscrolledNavigationBar}
         </NavigationBarContainer>
         {appear(
           <NavigationBarContainer
@@ -83,7 +83,7 @@ class HeaderNavigationBar extends React.Component<
               reachedTransitionPoint === true ? "box-none" : "none"
             }
           >
-            <ScrolledNavigationBar backgroundColor={backgroundColor} />
+            {ScrolledNavigationBar}
           </NavigationBarContainer>,
           animatedValue,
           transitionPoint - (navigationBarHeight + 30),
