@@ -1,21 +1,26 @@
 // @flow
 import * as React from 'react';
+
 import { Animated } from 'react-native';
-import Sticky from './api/Sticky';
-import NavigationBarContainer from './api/NavigationBarContainer';
-import Header from './api/Header';
-import NavigationBar from './components/NavigationBar';
+
 import Container from './api/Container';
-import StatusBar from './components/StatusBar';
-import NavigationBarIcon from './components/NavigationBar/NavigationBarIcon';
+import Header from './api/Header';
+import NavigationBarContainer from './api/NavigationBarContainer';
 import Snap from './api/Snap';
-import type {
-  StatusBarComponentProps,
-  ContainerProps,
+import Sticky from './api/Sticky';
+import NavigationBar from './components/NavigationBar';
+import NavigationBarIcon from './components/NavigationBar/NavigationBarIcon';
+import StatusBar from './components/StatusBar';
+import {
+  NAVIGATION_BAR_HEIGHT,
+  STATUS_BAR_HEIGHT,
+} from './constants';
+import {
+  BackButtonProps,
   ContainerDefaultProps,
-  BackButtonProps
+  ContainerProps,
+  StatusBarComponentProps,
 } from './types';
-import { NAVIGATION_BAR_HEIGHT, STATUS_BAR_HEIGHT } from './constants';
 
 const ImageStatusBar = () => (
   <StatusBar.Component barStyle="light-content" backgroundColor="transparent" />
@@ -282,7 +287,7 @@ class ScrollableNavigationBar extends React.Component<ScrollableNavigationBarPro
         StatusBar={
           HeaderBackgroundComponent !== undefined ? ImageStatusBar : StatusBar
         }
-        Header={() => (
+        Header={(
           <React.Fragment>
             {transitionPoint ===
             ScrollableNavigationBar.defaultProps.transitionPoint

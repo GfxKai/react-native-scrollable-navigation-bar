@@ -1,16 +1,18 @@
 // @flow
 import * as React from 'react';
+
 import { Animated } from 'react-native';
-import { type ScrollEvent } from 'react-native/Libraries/Types/CoreEventTypes';
-import { NAVIGATION_BAR_HEIGHT, STATUS_BAR_HEIGHT } from '../constants';
-import Context from './Context';
-import type {
-  ContainerProps,
-  ContainerDefaultProps,
-  ContainerState,
-  EventHandlerType
-} from '../types';
+import { ScrollEvent } from 'react-native/Libraries/Types/CoreEventTypes';
+
+import { NAVIGATION_BAR_HEIGHT } from '../constants';
 import EventHandler from '../EventHandler';
+import {
+  ContainerDefaultProps,
+  ContainerProps,
+  ContainerState,
+  EventHandlerType,
+} from '../types';
+import Context from './Context';
 
 class Container extends React.Component<ContainerProps, ContainerState> {
   static defaultProps: ContainerDefaultProps = {
@@ -154,7 +156,7 @@ class Container extends React.Component<ContainerProps, ContainerState> {
           style={style}
           {...this.props}
         >
-          <Header animatedValue={this.animatedValue} />
+          {Header}
           {children}
         </ScrollComponent>
       </Context.Provider>
