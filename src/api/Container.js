@@ -64,9 +64,32 @@ class Container extends React.Component<ContainerProps, ContainerState> {
   }
 
   getNode() {
-    if (this.component && this.component.getNode) {
+    if (this.component == null) {
+      return null;
+    }
+
+    if (
+      'scrollToTop' in this.component ||
+      'scrollTo' in this.component ||
+      'scrollToOffset' in this.component ||
+      'scrollResponderScrollTo' in this.component
+    ) {
+      // This is already a scrollable node.
+      return this.component;
+    }
+    if ('getScrollResponder' in this.component) {
+      // If the view is a wrapper like FlatList, SectionList etc.
+      // We need to use `getScrollResponder` to get access to the scroll responder
+      return this.component.getScrollResponder();
+    }
+    if ('getNode' in this.component) {
+      // When a `ScrollView` is wraped in `Animated.createAnimatedComponent`
+      // we need to use `getNode` to get the ref to the actual scrollview.
+      // Note that `getNode` is deprecated in newer versions of react-native
+      // this is why we check if we already have a scrollable node above.
       return this.component.getNode();
     }
+
     return this.component;
   }
 
